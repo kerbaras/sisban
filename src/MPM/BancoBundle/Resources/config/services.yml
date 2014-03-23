@@ -1,0 +1,7 @@
+parameters:
+#    banco.example.class: MPM\BancoBundle\Example
+
+services:
+#    banco.example:
+#        class: %banco.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema Bancario{% endblock %}</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">-->
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    {% block stylesheets %}
+    {% endblock %}
+
+    <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    {% include 'BancoBundle:Extras:menu.html.twig' %}
+
+    {% block javascripts %}
+    {% endblock %}
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+
+        <h1 class="container">SISBAN<br/><small>Sistema de Gestión Bancaria</small></h1>
+        <nav>
+            <div id="menu" class="container"></div>
+        </nav>
+    </header>
+
+    <section id="main" class="container">
+    {% block main %}
+    {% endblock %}
+    </section>
+
+    <footer>
+        <p><b>SISBAN</b><br/>Power By: Matías Pierobón Marcos</p>
+    </footer>
+</body>
+</html>

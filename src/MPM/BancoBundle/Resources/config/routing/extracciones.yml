@@ -1,0 +1,3 @@
+banco_operaciones_extracciones:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }

@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="{{ asset('/js/ThemePanel/theme.css') }}">
+<script src="{{ asset('/js/JSCookMenu.js') }}"></script>
+<script src="{{ asset('/js/ThemePanel/theme.js') }}"></script>
+<script language="JavaScript">
+    var menu = [
+        [null,'Inicio','{{ path('banco_homepage') }}','_self',null],
+        [null,'Operaciones',null,null,null,
+            [null,'Depósitos','{{ path('banco_operaciones_depositos') }}','_self',null],
+            [null,'Extracciones','{{ path('banco_operaciones_extracciones') }}','_self',null],
+            _cmSplit,
+            [null,'Transferencias','{{ path('banco_operaciones_transferencias') }}','_self',null],
+            [null,'Préstamos','{{ path('banco_operaciones_prestamos') }}','_self',null]
+        ],
+        [null,'Administración',null,null,null,
+            [null,'Personas',null,null,null,
+                [null,'Listado','{{ path('banco_personas') }}','_self',null],
+                [null,'Nueva Persona','{{ path('banco_personas_new') }}','_self',null]
+            ],
+            [null,'Cuentas',null,null,null,
+                [null,'Listado','{{ path('banco_cuentas') }}','_self',null],
+                [null,'Nueva Cuenta','{{ path('banco_cuentas_new') }}','_self',null],
+                _cmSplit,
+                [null,'Transferir Cuenta','{{ path('banco_cuentas_transfer') }}','_self',null]
+                ],
+            _cmSplit,
+            [null,'Logs','{{ path('banco_logs') }}','_self',null]
+        ],
+        [null,'Mis Cuentas',null,null,null,
+            [null,'Listado','{{ path('banco_profile_cuentas') }}','_self',null],
+            [null,'Detalles','{{ path('banco_profile_detalles') }}','_self',null],
+            [null,'Deudas','{{ path('banco_profile_deudas') }}','_self',null]
+        ],
+        [null,'Bienvenido {{ app.user.username }}!',null,null,null,
+            [null,'Editar Perfil','{{ path('banco_profile') }}','_self',null],
+            _cmSplit,
+            [null,'Cerrar Sesión','{{ path('logout') }}','_self',null]
+        ]
+    ];
+
+    $(function(){
+        cmDraw('menu', menu, 'hbr', cmThemePanel);
+    });
+</script>

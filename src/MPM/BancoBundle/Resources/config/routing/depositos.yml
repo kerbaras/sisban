@@ -1,0 +1,6 @@
+banco_operaciones_depositos:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Operations:depositos }
+banco_operaciones_depositar:
+    pattern:  /depositar
+    defaults: { _controller: BancoBundle:Operations:depositar }

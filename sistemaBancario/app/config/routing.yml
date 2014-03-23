@@ -1,0 +1,4 @@
+banco:
+    resource: "@BancoBundle/Resources/config/routing.yml"
+    prefix:   /
+

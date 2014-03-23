@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Matias Pierobon Marcos">
+
+    <title>Sistema Bancario - LogIn</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background: #c9de96;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(44%,#8ab66b), color-stop(100%,#398235));
+            background: -webkit-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+            background: -o-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+            background: -ms-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+            background: linear-gradient(to bottom, #c9de96 0%,#8ab66b 44%,#398235 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 );
+            background-size: cover;
+            background-repeat: repeat-x;
+            background-position: 0,0;
+            background-attachment: fixed;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+        .form-signin input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+
+    <form class="form-signin" role="form" action="{{ path('login_check') }}" method="post">
+        <h2 class="form-signin-heading">Inicie Sesión</h2>
+        {% if error %}
+            <div class="alert alert-danger" style="display: none;"><strong>{{ error.message }}</strong></div>
+            <script>
+                $('.alert').fadeIn();
+            </script>
+        {% endif %}
+        <input type="text" name="_username" class="form-control" placeholder="Número de Documento" required autofocus value="{{ last_username }}">
+        <input type="password" name="_password" class="form-control" placeholder="Contraseña" required>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Recordarme
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'BancoBundle::layout.html.twig' %}
+
+
+{% block main %}
+    <h1>Depósitos Realizados</h1>
+
+    <div class="btn-group pull-right">
+        <a href="{{ path('banco_operaciones_depositar') }}" class="btn btn-default ttp" data-toggle="tooltip" data-placement="top" title="Depositar"><i class="glyphicon glyphicon-plus"></i></a>
+        <a href="#" class="btn btn-default ttp" data-toggle="tooltip" data-placement="top" title="Buscar Depósitos"><i class="glyphicon glyphicon-search"></i></a>
+        <a href="#" class="btn btn-default ttp" data-toggle="tooltip" data-placement="top" title="Imprimir Depósitos"><i class="glyphicon glyphicon-print"></i></a>
+    </div>
+    <script>
+        $('.ttp').tooltip();
+    </script>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Cuenta</th>
+            <th>Monto</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for depositos in depositos %}
+            <tr>
+                <td>{{ deposito.fecha | date('d/m/Y H:i:s') }}</td>
+                <td>{{ deposito.cuenta.nombre }}</td>
+                <td>${{ deposito.monto }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No se encontraron depósitos</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

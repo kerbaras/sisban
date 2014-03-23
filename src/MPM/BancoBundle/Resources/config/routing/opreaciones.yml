@@ -1,0 +1,12 @@
+banco_operaciones_depositos_ref:
+    resource: "@BancoBundle/Resources/config/routing/depositos.yml"
+    prefix:   /depositos
+banco_operaciones_extracciones_ref:
+    resource: "@BancoBundle/Resources/config/routing/extracciones.yml"
+    prefix:   /extracciones
+banco_operaciones_transferencias_ref:
+    resource: "@BancoBundle/Resources/config/routing/transferencias.yml"
+    prefix:   /transferencias
+banco_operaciones_prestamos_ref:
+    resource: "@BancoBundle/Resources/config/routing/prestamos.yml"
+    prefix:   /prestamos

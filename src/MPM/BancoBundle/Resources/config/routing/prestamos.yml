@@ -1,0 +1,3 @@
+banco_operaciones_prestamos:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }

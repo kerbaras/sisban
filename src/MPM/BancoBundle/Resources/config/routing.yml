@@ -1,0 +1,45 @@
+banco_homepage:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }
+login:
+    pattern:  /login
+    defaults: { _controller: BancoBundle:Main:login }
+login_check:
+    pattern:  /login/check
+logout:
+    pattern:  /logout
+
+banco_operaciones:
+    resource: "@BancoBundle/Resources/config/routing/opreaciones.yml"
+    prefix:   /opreaciones
+
+banco_personas:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_personas_new:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_cuentas:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_cuentas_new:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_cuentas_transfer:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_logs:
+    pattern: /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_profile:
+    pattern: /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_profile_cuentas:
+    pattern: /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_profile_detalles:
+    pattern: /
+    defaults: { _controller: BancoBundle:Main:index }
+banco_profile_deudas:
+    pattern: /
+    defaults: { _controller: BancoBundle:Main:index }
