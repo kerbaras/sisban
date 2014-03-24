@@ -112,6 +112,16 @@ class Persona
      */
     private $confirmationToken;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Cuenta", mappedBy="titular")
+     **/
+    private $cuentasTitulares;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Cuenta", mappedBy="asociados")
+     **/
+    private $cuentasAsociadas;
+
 
     /**
      * Get id
@@ -420,5 +430,79 @@ class Persona
     public function getConfirmationToken()
     {
         return $this->confirmationToken;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cuentasTitulares = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->cuentasAsociadas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add cuentasTitulares
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentasTitulares
+     * @return Persona
+     */
+    public function addCuentasTitulare(\MPM\BancoBundle\Entity\Cuenta $cuentasTitulares)
+    {
+        $this->cuentasTitulares[] = $cuentasTitulares;
+
+        return $this;
+    }
+
+    /**
+     * Remove cuentasTitulares
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentasTitulares
+     */
+    public function removeCuentasTitulare(\MPM\BancoBundle\Entity\Cuenta $cuentasTitulares)
+    {
+        $this->cuentasTitulares->removeElement($cuentasTitulares);
+    }
+
+    /**
+     * Get cuentasTitulares
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCuentasTitulares()
+    {
+        return $this->cuentasTitulares;
+    }
+
+    /**
+     * Add cuentasAsociadas
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentasAsociadas
+     * @return Persona
+     */
+    public function addCuentasAsociada(\MPM\BancoBundle\Entity\Cuenta $cuentasAsociadas)
+    {
+        $this->cuentasAsociadas[] = $cuentasAsociadas;
+
+        return $this;
+    }
+
+    /**
+     * Remove cuentasAsociadas
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentasAsociadas
+     */
+    public function removeCuentasAsociada(\MPM\BancoBundle\Entity\Cuenta $cuentasAsociadas)
+    {
+        $this->cuentasAsociadas->removeElement($cuentasAsociadas);
+    }
+
+    /**
+     * Get cuentasAsociadas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCuentasAsociadas()
+    {
+        return $this->cuentasAsociadas;
     }
 }

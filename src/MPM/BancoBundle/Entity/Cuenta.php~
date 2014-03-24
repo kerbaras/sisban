@@ -22,10 +22,80 @@ class Cuenta
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Persona", inversedBy="cuentasTitulares")
+     * @ORM\JoinColumn(name="titular_id", referencedColumnName="id")
+     **/
+    private $titular;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Persona", inversedBy="cuentasAsociadas")
+     * @ORM\JoinTable(name="cuentas_asociados")
+     **/
+    private $asociados;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="monto", type="decimal")
      */
     private $monto;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Deposito", mappedBy="cuenta")
+     **/
+    private $depositos;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Extraccion", mappedBy="cuenta")
+     **/
+    private $extracciones;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Prestamo", mappedBy="cuenta")
+     **/
+    private $prestamos;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Transferencia", mappedBy="cuentaDe")
+     **/
+    private $transferenciasHechas;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Transferencia", mappedBy="cuentaA")
+     **/
+    private $transferenciasRecibidas;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set monto
+     *
+     * @param string $monto
+     * @return Cuenta
+     */
+    public function setMonto($monto)
+    {
+        $this->monto = $monto;
+
+        return $this;
+    }
+
+    /**
+     * Get monto
+     *
+     * @return string 
+     */
+    public function getMonto()
+    {
+        return $this->monto;
+    }
 }

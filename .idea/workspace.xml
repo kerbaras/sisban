@@ -23,10 +23,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Form.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Form.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Utilities/Form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="22" selection-start="151" selection-end="151" vertical-scroll-proportion="0.31634447" vertical-offset="0" max-vertical-offset="2970">
+            <state line="21" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="-7.0740743" vertical-offset="187" max-vertical-offset="2970">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Prestamo.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Prestamo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="116" column="7" selection-start="1945" selection-end="1945" vertical-scroll-proportion="-65.07407" vertical-offset="331" max-vertical-offset="2520">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cuenta.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Cuenta.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="75" selection-start="635" selection-end="651" vertical-scroll-proportion="-18.0" vertical-offset="54" max-vertical-offset="1926">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Persona.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Persona.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="122" column="30" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.75922674" vertical-offset="1764" max-vertical-offset="7920">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transferencia.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Transferencia.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="22" selection-start="836" selection-end="844" vertical-scroll-proportion="-9.333333" vertical-offset="432" max-vertical-offset="2502">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Deposito.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Deposito.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="21" selection-start="630" selection-end="637" vertical-scroll-proportion="-10.592592" vertical-offset="290" max-vertical-offset="1980">
               <folding />
             </state>
           </provider>
@@ -63,8 +108,6 @@
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Resources/config/routing/depositos.yml" />
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Resources/views/Operaciones/Depositos/new.html.twig" />
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Resources/views/Operaciones/Depositos/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Persona.php" />
-        <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Cuenta.php" />
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Operacion.php" />
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Deposito.php" />
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Extraccion.php" />
@@ -72,6 +115,8 @@
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Transferencia.php" />
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Utilites/FormCtrl.php" />
         <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Utilities/Form.php" />
+        <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Cuenta.php" />
+        <option value="$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Persona.php" />
       </list>
     </option>
   </component>
@@ -565,20 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Cuenta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="493" selection-end="493" vertical-scroll-proportion="0.7469244" vertical-offset="97" max-vertical-offset="666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Persona.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="8" selection-start="376" selection-end="376" vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="2178">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Operacion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="615" selection-end="615" vertical-scroll-proportion="-14.925926" vertical-offset="245" max-vertical-offset="792">
@@ -593,30 +624,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Prestamo.php">
+    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Utilities/Form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="4" selection-start="449" selection-end="622" vertical-scroll-proportion="-6.9259257" vertical-offset="317" max-vertical-offset="864">
+        <state line="21" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="-7.0740743" vertical-offset="187" max-vertical-offset="2970">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Transferencia.php">
+    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Prestamo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="7" selection-start="467" selection-end="467" vertical-scroll-proportion="-7.5925927" vertical-offset="299" max-vertical-offset="846">
+        <state line="116" column="7" selection-start="1945" selection-end="1945" vertical-scroll-proportion="-65.07407" vertical-offset="331" max-vertical-offset="2520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Cuenta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="75" selection-start="635" selection-end="651" vertical-scroll-proportion="-18.0" vertical-offset="54" max-vertical-offset="1926">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Deposito.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="7" selection-start="231" selection-end="231" vertical-scroll-proportion="0.2970123" vertical-offset="83" max-vertical-offset="738">
+        <state line="32" column="21" selection-start="630" selection-end="637" vertical-scroll-proportion="-10.592592" vertical-offset="290" max-vertical-offset="1980">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Utilities/Form.php">
+    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Transferencia.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="151" selection-end="151" vertical-scroll-proportion="0.31634447" vertical-offset="0" max-vertical-offset="2970">
+        <state line="38" column="22" selection-start="836" selection-end="844" vertical-scroll-proportion="-9.333333" vertical-offset="432" max-vertical-offset="2502">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MPM/BancoBundle/Entity/Persona.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="30" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.75922674" vertical-offset="1764" max-vertical-offset="7920">
           <folding />
         </state>
       </provider>

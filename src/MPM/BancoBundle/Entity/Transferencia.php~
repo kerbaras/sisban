@@ -38,4 +38,96 @@ class Transferencia
      */
     protected $cuentaA;
 
+
+    /**
+     * Set monto
+     *
+     * @param string $monto
+     * @return Transferencia
+     */
+    public function setMonto($monto)
+    {
+        $this->monto = $monto;
+
+        return $this;
+    }
+
+    /**
+     * Get monto
+     *
+     * @return string 
+     */
+    public function getMonto()
+    {
+        return $this->monto;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     * @return Transferencia
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string 
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * Set cuentaDe
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentaDe
+     * @return Transferencia
+     */
+    public function setCuentaDe(\MPM\BancoBundle\Entity\Cuenta $cuentaDe = null)
+    {
+        $this->cuentaDe = $cuentaDe;
+
+        return $this;
+    }
+
+    /**
+     * Get cuentaDe
+     *
+     * @return \MPM\BancoBundle\Entity\Cuenta 
+     */
+    public function getCuentaDe()
+    {
+        return $this->cuentaDe;
+    }
+
+    /**
+     * Set cuentaA
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentaA
+     * @return Transferencia
+     */
+    public function setCuentaA(\MPM\BancoBundle\Entity\Cuenta $cuentaA = null)
+    {
+        $this->cuentaA = $cuentaA;
+
+        return $this;
+    }
+
+    /**
+     * Get cuentaA
+     *
+     * @return \MPM\BancoBundle\Entity\Cuenta 
+     */
+    public function getCuentaA()
+    {
+        return $this->cuentaA;
+    }
 }
