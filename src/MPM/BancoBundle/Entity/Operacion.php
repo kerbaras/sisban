@@ -7,8 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Operacion
  *
- * @ORM\Table()
+ * @ORM\Table(name="operaciones")
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\OperacionRepository")
+ * @InheritanceType("SINGLE_TABLE")
+ * @DiscriminatorColumn(name="discr", type="string")
+ * @DiscriminatorMap({"deposito" = "Deposito", "extraccion" = "Extraccion", "prestamo" = "Prestamo", "transferencia" = "Transferencia"})
  */
 class Operacion
 {

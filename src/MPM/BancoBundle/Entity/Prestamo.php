@@ -7,10 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Prestamo
  *
- * @ORM\Table()
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\PrestamoRepository")
  */
-class Prestamo
+class Prestamo extends Operacion
 {
     /**
      * @var string
