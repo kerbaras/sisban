@@ -1,6 +1,6 @@
 <?php
 
-namespace MPM\BancoBundle\Utilites;
+namespace MPM\BancoBundle\Utilities;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
