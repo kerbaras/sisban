@@ -1,0 +1,115 @@
+<?php
+
+namespace MPM\BancoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Persona
+ *
+ * @ORM\Table(name="personas")
+ * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\PersonaRepository")
+ */
+class Persona
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido", type="string", length=255)
+     */
+    private $apellido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dni", type="string", length=255)
+     */
+    private $dni;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="salt", type="string", length=255)
+     */
+    private $salt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="expired", type="boolean")
+     */
+    private $expired;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="expiredAt", type="datetime")
+     */
+    private $expiredAt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="locked", type="boolean")
+     */
+    private $locked;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="credentials", type="string", length=255)
+     */
+    private $credentials;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="credentialsExpired", type="boolean")
+     */
+    private $credentialsExpired;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="credentialsExpiredAt", type="datetime")
+     */
+    private $credentialsExpiredAt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="enabled", type="boolean")
+     */
+    private $enabled;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="confirmationToken", type="string", length=255)
+     */
+    private $confirmationToken;
+
+}
