@@ -13,82 +13,30 @@ use Doctrine\ORM\Mapping as ORM;
 class Prestamo
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="monto", type="decimal")
      */
-    private $monto;
+    protected $monto;
 
     /**
      * @var string
      *
      * @ORM\Column(name="descripcion", type="text")
      */
-    private $descripcion;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    protected $descripcion;
 
     /**
-     * Set monto
-     *
-     * @param string $monto
-     * @return Prestamo
+     * @ORM\ManyToOne(targetEntity="Cuenta", inversedBy="prestamos")
+     * @ORM\JoinColumn(name="cuenta_a_id", referencedColumnName="id")
      */
-    public function setMonto($monto)
-    {
-        $this->monto = $monto;
-
-        return $this;
-    }
+    protected $cuenta;
 
     /**
-     * Get monto
+     * @var boolean
      *
-     * @return string 
+     * @ORM\Column(name="is_devuelto", type="boolean")
      */
-    public function getMonto()
-    {
-        return $this->monto;
-    }
+    protected $devuelto;
 
-    /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Prestamo
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string 
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
-    }
 }

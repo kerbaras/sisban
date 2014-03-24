@@ -13,82 +13,29 @@ use Doctrine\ORM\Mapping as ORM;
 class Transferencia
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="monto", type="decimal")
      */
-    private $monto;
+    protected $monto;
 
     /**
      * @var string
      *
      * @ORM\Column(name="descripcion", type="text")
      */
-    private $descripcion;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    protected $descripcion;
 
     /**
-     * Set monto
-     *
-     * @param string $monto
-     * @return Transferencia
+     * @ORM\ManyToOne(targetEntity="Cuenta", inversedBy="transferenciasHechas")
+     * @ORM\JoinColumn(name="cuenta_de_id", referencedColumnName="id")
      */
-    public function setMonto($monto)
-    {
-        $this->monto = $monto;
-
-        return $this;
-    }
+    protected $cuentaDe;
 
     /**
-     * Get monto
-     *
-     * @return string 
+     * @ORM\ManyToOne(targetEntity="Cuenta", inversedBy="transferenciasRecibidas")
+     * @ORM\JoinColumn(name="cuenta_a_id", referencedColumnName="id")
      */
-    public function getMonto()
-    {
-        return $this->monto;
-    }
+    protected $cuentaA;
 
-    /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Transferencia
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string 
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
-    }
 }

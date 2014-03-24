@@ -7,88 +7,29 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Deposito
  *
- * @ORM\Table()
+ * @ORM\Table(name="depositos")
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\DepositoRepository")
  */
 class Deposito
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="monto", type="decimal")
      */
-    private $monto;
+    protected $monto;
 
     /**
      * @var string
      *
      * @ORM\Column(name="descripcion", type="text")
      */
-    private $descripcion;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    protected $descripcion;
 
     /**
-     * Set monto
-     *
-     * @param string $monto
-     * @return Deposito
+     * @ORM\ManyToOne(targetEntity="Cuenta", inversedBy="depositos")
+     * @ORM\JoinColumn(name="cuenta_a_id", referencedColumnName="id")
      */
-    public function setMonto($monto)
-    {
-        $this->monto = $monto;
+    protected $cuenta;
 
-        return $this;
-    }
-
-    /**
-     * Get monto
-     *
-     * @return string 
-     */
-    public function getMonto()
-    {
-        return $this->monto;
-    }
-
-    /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Deposito
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string 
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
-    }
 }

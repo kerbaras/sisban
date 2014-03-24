@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Cuenta
  *
- * @ORM\Table()
+ * @ORM\Table(name="cuentas")
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\CuentaRepository")
  */
 class Cuenta
@@ -28,37 +28,4 @@ class Cuenta
      */
     private $monto;
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set monto
-     *
-     * @param string $monto
-     * @return Cuenta
-     */
-    public function setMonto($monto)
-    {
-        $this->monto = $monto;
-
-        return $this;
-    }
-
-    /**
-     * Get monto
-     *
-     * @return string 
-     */
-    public function getMonto()
-    {
-        return $this->monto;
-    }
 }
