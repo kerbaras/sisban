@@ -8,8 +8,10 @@
         <div class="form-group">
             <label for="cuenta-owner" class="col-sm-2 control-label">Cuenta</label>
             <div class="col-sm-5">
-                <select name="cuenta-owner" data-placeholder="Elija un Propietario" class="chosen" style="width: 100%; line-height: 34px;">
-                    <option value="1">Matías Pierobón</option>
+                <select id="personas" name="cuenta-owner" data-placeholder="Elija un Propietario" class="chosen" style="width: 100%; line-height: 34px;">
+                    {% for persona in personas %}
+                        <option value="{{ persona.id }}">{{ persona.apellido }}, {{ persona.nombre }}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="col-sm-5">

@@ -15,6 +15,7 @@ class OperationsController extends Controller{
     public function depositarAction()
     {
         $depositos = array();
-        return $this->render('BancoBundle:Operaciones:Depositos/new.html.twig', array('depositos'=>$depositos));
+        $personas = $this->getDoctrine()->getRepository('BancoBundle:Persona')->findAll();
+        return $this->render('BancoBundle:Operaciones:Depositos/new.html.twig', array('depositos'=>$depositos, 'personas' => $personas));
     }
 } 
