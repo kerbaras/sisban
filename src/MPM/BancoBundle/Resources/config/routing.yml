@@ -13,12 +13,10 @@ banco_operaciones:
     resource: "@BancoBundle/Resources/config/routing/opreaciones.yml"
     prefix:   /opreaciones
 
-banco_personas:
-    pattern:  /
-    defaults: { _controller: BancoBundle:Main:index }
-banco_personas_new:
-    pattern:  /
-    defaults: { _controller: BancoBundle:Main:index }
+banco_personas_ref:
+    resource: "@BancoBundle/Resources/config/routing/personas.yml"
+    prefix:   /personas
+
 banco_cuentas:
     pattern:  /
     defaults: { _controller: BancoBundle:Main:index }

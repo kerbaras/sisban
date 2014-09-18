@@ -1,0 +1,27 @@
+<?php
+
+namespace MPM\BancoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Deposito
+ *
+ * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\DepositoRepository")
+ */
+class Deposito
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monto", type="decimal")
+     */
+    private $monto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text")
+     */
+    private $descripcion;
+}

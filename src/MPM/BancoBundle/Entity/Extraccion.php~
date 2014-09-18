@@ -1,0 +1,28 @@
+<?php
+
+namespace MPM\BancoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Extraccion
+ *
+ * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\ExtraccionRepository")
+ */
+class Extraccion
+{
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monto", type="decimal")
+     */
+    private $monto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text")
+     */
+    private $descripcion;
+}

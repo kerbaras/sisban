@@ -1,0 +1,34 @@
+<?php
+
+namespace MPM\BancoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Prestamo
+ *
+ * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\PrestamoRepository")
+ */
+class Prestamo
+{
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monto", type="decimal")
+     */
+    private $monto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text")
+     */
+    private $descripcion;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Cuenta", inversedBy="misPrestamos")
+     * @ORM\JoinColumn(name="cuenta_destino_id", referencedColumnName="id")
+     **/
+    private $cuentaDestino;
+}

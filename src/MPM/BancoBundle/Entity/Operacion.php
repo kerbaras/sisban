@@ -7,8 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Operacion
  *
- * @ORM\Table()
+ * @ORM\Table(name="operaciones")
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\OperacionRepository")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"deposito" = "Deposito", "extraccion" = "Extraccion", "transferencia" = "Transferencia", "prestamo" = "Prestamo"})
  */
 class Operacion
 {
@@ -35,6 +38,11 @@ class Operacion
      */
     private $ip;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Cuenta", inversedBy="operaciones")
+     * @ORM\JoinColumn(name="cuenta_id", referencedColumnName="id")
+     **/
+    private $cuenta;
 
     /**
      * Get id
@@ -90,5 +98,28 @@ class Operacion
     public function getIp()
     {
         return $this->ip;
+    }
+
+    /**
+     * Set cuenta
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuenta
+     * @return Operacion
+     */
+    public function setCuenta(\MPM\BancoBundle\Entity\Cuenta $cuenta = null)
+    {
+        $this->cuenta = $cuenta;
+
+        return $this;
+    }
+
+    /**
+     * Get cuenta
+     *
+     * @return \MPM\BancoBundle\Entity\Cuenta 
+     */
+    public function getCuenta()
+    {
+        return $this->cuenta;
     }
 }

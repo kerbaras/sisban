@@ -1,0 +1,15 @@
+banco_personas:
+    pattern:  /
+    defaults: { _controller: BancoBundle:Personas:list }
+banco_personas_new:
+    pattern:  /nueva
+    defaults: { _controller: BancoBundle:Personas:new }
+    methods:  [GET]
+banco_personas_create:
+    pattern:  /nueva
+    defaults: { _controller: BancoBundle:Personas:create }
+    methods:  [POST]
+banco_personas_show:
+    pattern:  /{id}
+    defaults: { _controller: BancoBundle:Personas:show }
+    methods:  [GET]

@@ -1,0 +1,56 @@
+<?php
+
+namespace MPM\BancoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cuenta
+ *
+ * @ORM\Table(name="cuentas")
+ * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\CuentaRepository")
+ */
+class Cuenta
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monto", type="decimal")
+     */
+    private $monto;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Persona", inversedBy="cuentas")
+     * @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
+     **/
+    private $propietario;
+
+    /**
+     * 
+     * @ORM\ManyToMany(targetEntity="Persona", inversedBy="cuentasAsociadas")
+     * @ORM\JoinTable(name="asociados_cunetas",
+     *      joinColumns={@ORM\JoinColumn(name="cuenta_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="persona_id", referencedColumnName="id")}
+     *      )
+     **/
+    private $asociados;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Operacion", mappedBy="cuenta")
+     **/
+    private $operaciones;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Prestamo", mappedBy="cuentaDestino")
+     **/
+    private $misPrestamos;
+}

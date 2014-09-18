@@ -1,27 +1,18 @@
 security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        MPM\BancoBundle\Entity\Persona: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    39831249: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-
+        main:
+            entity:
+                class: MPM\BancoBundle\Entity\Persona
+                property: dni
     firewalls:
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        login:
-            pattern:  ^/login$
-            security: false
-
         secured_area:
             pattern:    ^/
             form_login:
@@ -30,10 +21,11 @@ security:
             logout:
                 path:   logout
                 target: banco_homepage
-            #anonymous: ~
+            anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
 
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
-        - { path: ^/administracion, roles: 'ROLE_ADMIN' }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY}
+        - { path: ^/, roles: 'ROLE_USER' }
+        - { path: ^/personas, roles: 'ROLE_ADMIN' }

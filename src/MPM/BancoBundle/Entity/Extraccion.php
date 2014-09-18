@@ -7,19 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Extraccion
  *
- * @ORM\Table()
+ * @ORM\Table(name="extracciones")
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\ExtraccionRepository")
  */
-class Extraccion
+class Extraccion extends Operacion
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
 
     /**
      * @var string
@@ -34,17 +26,6 @@ class Extraccion
      * @ORM\Column(name="descripcion", type="text")
      */
     private $descripcion;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set monto

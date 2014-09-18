@@ -7,20 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Transferencia
  *
- * @ORM\Table()
+ * @ORM\Table(name="transferencias")
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\TransferenciaRepository")
  */
-class Transferencia
+class Transferencia extends Operacion
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
     /**
      * @var string
      *
@@ -35,16 +26,11 @@ class Transferencia
      */
     private $descripcion;
 
-
     /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+     * @ORM\ManyToOne(targetEntity="Cuenta")
+     * @ORM\JoinColumn(name="cuenta_destino_id", referencedColumnName="id")
+     **/
+    private $cuentaDestino;
 
     /**
      * Set monto
@@ -90,5 +76,28 @@ class Transferencia
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+    /**
+     * Set cuentaDestino
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentaDestino
+     * @return Transferencia
+     */
+    public function setCuentaDestino(\MPM\BancoBundle\Entity\Cuenta $cuentaDestino = null)
+    {
+        $this->cuentaDestino = $cuentaDestino;
+
+        return $this;
+    }
+
+    /**
+     * Get cuentaDestino
+     *
+     * @return \MPM\BancoBundle\Entity\Cuenta 
+     */
+    public function getCuentaDestino()
+    {
+        return $this->cuentaDestino;
     }
 }

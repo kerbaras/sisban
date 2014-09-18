@@ -7,19 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Prestamo
  *
- * @ORM\Table()
+ * @ORM\Table(name="prestamos")
  * @ORM\Entity(repositoryClass="MPM\BancoBundle\Entity\PrestamoRepository")
  */
-class Prestamo
+class Prestamo extends Operacion
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
 
     /**
      * @var string
@@ -35,16 +27,11 @@ class Prestamo
      */
     private $descripcion;
 
-
     /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+     * @ORM\ManyToOne(targetEntity="Cuenta", inversedBy="misPrestamos")
+     * @ORM\JoinColumn(name="cuenta_destino_id", referencedColumnName="id")
+     **/
+    private $cuentaDestino;
 
     /**
      * Set monto
@@ -90,5 +77,28 @@ class Prestamo
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+    /**
+     * Set cuentaDestino
+     *
+     * @param \MPM\BancoBundle\Entity\Cuenta $cuentaDestino
+     * @return Prestamo
+     */
+    public function setCuentaDestino(\MPM\BancoBundle\Entity\Cuenta $cuentaDestino = null)
+    {
+        $this->cuentaDestino = $cuentaDestino;
+
+        return $this;
+    }
+
+    /**
+     * Get cuentaDestino
+     *
+     * @return \MPM\BancoBundle\Entity\Cuenta 
+     */
+    public function getCuentaDestino()
+    {
+        return $this->cuentaDestino;
     }
 }

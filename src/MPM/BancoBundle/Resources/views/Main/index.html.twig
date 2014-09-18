@@ -3,5 +3,5 @@
 
 {% block main %}
     <h1>Bienvenido al Sistema Bancario</h1>
-    <h2>Ha iniciado sesión como: <span style="font-style: italic">{{ app.user.username }}</span>!</h2>
+    <h2>Ha iniciado sesión como: <span style="font-style: italic">{{ app.user.apellido | title }}, {{ app.user.nombre | title }}</span>!</h2>
 {% endblock %}
